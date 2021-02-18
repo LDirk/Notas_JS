@@ -9,6 +9,9 @@ titulo.textContent = "Cálculo das notas";
 
 var materias = document.querySelectorAll(".Nota");
 
+var somacreditos = 0; 
+var somanotas_pesos = 0; 
+var CrGeral = 0; 
 
 for (var i = 0; i< materias.length; i++){
 
@@ -21,6 +24,8 @@ for (var i = 0; i< materias.length; i++){
 	var tdvae2 = materia.querySelector(".info-VAE2");
 	var vae2 = tdvae2.textContent;
 
+	var tdcredito = materia.querySelector(".creditos");
+	var credito = tdcredito.textContent; 
 
 	vae1valido = true;
 	vae2valido = true; 
@@ -74,6 +79,71 @@ for (var i = 0; i< materias.length; i++){
 			tdnotafinal.textContent ="";
 		}
 	}
+
+	if (vae1valido && vae2valido){
+
+		somacreditos = somacreditos + parseInt(credito); 
+		
+
+		somanotas_pesos = somanotas_pesos + parseFloat(notafinal)*parseInt(credito);
+		
+	}
 }
 
+
+CrGeral = somanotas_pesos/somacreditos;
+
+var notas = document.querySelectorAll(".NotaGeral");
+
+for (var i = 0; i< notas.length; i++){
+
+	var nota = notas[i]
+
+	if (vae1valido && vae2valido){
+		var tdcr = nota.querySelector(".info-cr");
+		tdcr.textContent = CrGeral.toFixed(2);
+
+	}
+
+}
+
+
+
+
+
+
+
+var botaoAdicionar = document.querySelector("#adicionar-materia");
+
+botaoAdicionar.addEventListener("click", function(event){
+
+	event.preventDefault();
+	
+	var form = document.querySelector("#adicionar");
+
+	materia = (form.nome.value);
+	nota1 = (form.vae1.value);
+	nota2 = (form.vae2.value); 
+
+	var notaTr = document.createElement("tr"); 
+
+	var tdNome = document.createElement("td");
+	var tdNota1 = document.createElement("td");
+	var tdNota2 = document.createElement("td");
+	var tdNotaFinal = document.createElement("td");
+	var tdSituacao = document.createElement("td");
+
+	tdNome.textContent = materia; 
+	tdNota1.textContent = nota1; 
+	tdNota2.textContent = nota2; 
+
+	notaTr.appendChild(tdNome);
+	notaTr.appendChild(tdNota1);
+	notaTr.appendChild(tdNota2);
+
+	var tabela = document.querySelector("#tabela-nota");
+	tabela.appendChild(notaTr);
+
+
+});
 
