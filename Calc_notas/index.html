@@ -24,18 +24,23 @@
 							<th>Matéria</th>
 							<th>VAE 1</th>
 							<th>VAE 2</th>
+							<th>Créditos </th>
 							<th>Nota Final</th>
-							<th>Situação</th>
+							<th>Situação</th>					
+		
 						</tr>
 					</thead>
+
 					<tbody id="tabela-nota">
 
 						<tr class="Nota" id = "primeira-materia" >
 							<td class="info-Materia">Cálculo</td>
 							<td class="info-VAE1">10</td>
 							<td class="info-VAE2">8</td>
+							<td class="creditos">3</td>
 							<td class="info-NotaFinal"></td>
 							<td class="info-Situação"></td>
+
 						</tr>
 
 
@@ -43,38 +48,69 @@
 							<td class="info-Materia">Tópicos de Matemática</td>
 							<td class="info-VAE1">10</td>
 							<td class="info-VAE2">7</td>
+							<td class="creditos">2</td>
 							<td class="info-NotaFinal"></td>
 							<td class="info-Situação"></td>
+
 						</tr>
 
 						<tr class="Nota" >
 							<td class="info-Materia">Introdução a programação</td>
 							<td class="info-VAE1">7</td>
 							<td class="info-VAE2">6</td>
+							<td class="creditos">2</td>
 							<td class="info-NotaFinal"></td>
 							<td class="info-Situação"></td>
+
 						</tr>
 
 						<tr class="Nota" >
 							<td class="info-Materia">Introdução a economia</td>
-							<td class="info-VAE1">4</td>
+							<td class="info-VAE1">8</td>
 							<td class="info-VAE2">5</td>
+							<td class="creditos">2</td>
 							<td class="info-NotaFinal"></td>
 							<td class="info-Situação"></td>
+						
 						</tr>
 
 						<tr class="Nota" >
 							<td class="info-Materia">Introdução a estatística</td>
 							<td class="info-VAE1">8</td>
 							<td class="info-VAE2">8</td>
+							<td class="creditos">2</td>
 							<td class="info-NotaFinal"></td>
 							<td class="info-Situação"></td>
+						
 						</tr>
-			
+
 					</tbody>
 				</table>
-
 			</section>
+
+			<br>
+			<br>
+			<br>
+			<br>
+
+				<table>
+					<thead>
+						<tr>
+							<th> Cr Geral </th>
+						</tr>
+					</thead>
+					<tbody id="tabela-nota">
+						<tr class="NotaGeral" id = "primeira-materia" >					
+							<td class = "info-cr"> </td>
+
+						</tr>
+					</tbody>
+				</table>	
+			<br>
+			<br>
+			<br>
+			<br>
+
 		</main>
 	<br>
 	<br>
@@ -82,7 +118,7 @@
 	<br>
 	<section class="container">
     	<h2 id="titulo-form">Adicionar nova matéria</h2>
-    	<form>
+    	<form id = "adicionar">
         	<div class="grupo">
             	<label for="nome">Nome:</label>
             	<input id="nome" name="nome" type="text" placeholder="Digite o nome da matéria" class="campo">
@@ -107,4 +143,4 @@
 	<script src = "js/principal.js"></script>	
 
 	</body>
-</html>
+</html
